@@ -2,17 +2,12 @@
 """
 Functions for cell filtering of scRNA-seq data via dropkick
 """
-import argparse
-import sys
-import os
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import seaborn as sns
 import scanpy as sc
-import time
-import threading
 from skimage.filters import (
     threshold_li,
     threshold_otsu,

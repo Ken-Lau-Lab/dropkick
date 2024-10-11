@@ -1,12 +1,12 @@
 """
-Modified version of `sklearn.metrics.scorer` to allow for scoring the entire lambda 
+Modified version of `sklearn.metrics.scorer` to allow for scoring the entire lambda
 path of a `glmnet` model.
 
 - lambda parameter added to the scorers
 - scorers return an array of scores, [n_lambda,]
 
-Authors: Andreas Mueller <amueller@ais.uni-bonn.de>, 
-Lars Buitinck <L.J.Buitinck@uva.nl>, 
+Authors: Andreas Mueller <amueller@ais.uni-bonn.de>,
+Lars Buitinck <L.J.Buitinck@uva.nl>,
 Arnaud Joly <arnaud.v.joly@gmail.com>
 
 License: Simplified BSD

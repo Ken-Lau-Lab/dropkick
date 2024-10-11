@@ -2,13 +2,9 @@
 """
 Automated ambient gene testing and counts data QC
 """
-import argparse
 import numpy as np
-import scanpy as sc
 import matplotlib.pyplot as plt
 from matplotlib import cm, gridspec
-
-from .api import recipe_dropkick
 
 
 def dropout_plot(adata, show=False, ax=None):
@@ -192,7 +188,7 @@ def counts_plot(adata, show=False, genes=True, ambient=True, mito=True, ax=None)
         ax.set_zorder(ax2.get_zorder() + 1)  # put ax in front of ax2
 
     # add legend from entries
-    labs = [l.get_label() for l in leg_entries]
+    labs = [leg.get_label() for leg in leg_entries]
     ax.legend(leg_entries, labs, loc="upper right", fontsize=12)
 
     ax.patch.set_visible(False)  # hide the 'canvas'

@@ -2,9 +2,10 @@
 """
 dropkick command line interface
 """
-import os, errno, argparse
+import os
+import errno
+import argparse
 import scanpy as sc
-import matplotlib.pyplot as plt
 
 from .api import dropkick, recipe_dropkick, coef_plot, score_plot
 from .qc import qc_summary

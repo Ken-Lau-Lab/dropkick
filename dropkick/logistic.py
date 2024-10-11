@@ -2,7 +2,6 @@
 Logistic regression model functions for dropkick
 """
 import numpy as np
-import scanpy as sc
 from scipy import stats
 from scipy.special import expit
 from scipy.sparse import issparse, csc_matrix
@@ -505,8 +504,8 @@ class LogitNet(BaseEstimator):
         z = np.empty((X.shape[0], coef.shape[0], coef.shape[-1]))
         # well... sometimes we just need a for loop
         for c in range(coef.shape[0]):  # all classes
-            for l in range(coef.shape[-1]):  # all values of lambda
-                z[:, c, l] = X.dot(coef[c, :, l])
+            for lam in range(coef.shape[-1]):  # all values of lambda
+                z[:, c, lam] = X.dot(coef[c, :, lam])
         z += intercept
 
         # drop the last dimension (lambda) when we are predicting for a single
