@@ -29,13 +29,13 @@ def dropout_plot(adata, show=False, ax=None):
     -------
 
     ax : matplotlib.axes.Axes
-        plot of gene dropout rates. return Axes object only if `show`==False, 
+        plot of gene dropout rates. return Axes object only if `show`==False,
         otherwise output plot.
     """
     if not ax:
         _, ax = plt.subplots(figsize=(4, 4))
     ax.plot(
-        np.arange(adata.n_vars)+1,
+        np.arange(adata.n_vars) + 1,
         adata.var.pct_dropout_by_counts[
             np.argsort(adata.var.pct_dropout_by_counts)
         ].values,
@@ -115,8 +115,8 @@ def counts_plot(adata, show=False, genes=True, ambient=True, mito=True, ax=None)
     -------
 
     ax : matplotlib.axes.Axes
-        log-log plot of total counts and total genes per ranked barcode, with percent 
-        ambient and mitochondrial counts on secondary axis if desired. return Axes 
+        log-log plot of total counts and total genes per ranked barcode, with percent
+        ambient and mitochondrial counts on secondary axis if desired. return Axes
         object only if `show`==False, otherwise output plot.
     """
     cmap = cm.get_cmap("coolwarm")
@@ -228,7 +228,7 @@ def qc_summary(
     -------
 
     fig : matplotlib.figure
-        `counts_plot()`, `sc.pl.highest_expr_genes()`, and `dropout_plot()` in single 
+        `counts_plot()`, `sc.pl.highest_expr_genes()`, and `dropout_plot()` in single
         figure
     """
     if not fig:

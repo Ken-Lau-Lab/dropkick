@@ -164,7 +164,6 @@ class LogitNet(BaseEstimator):
         max_features=None,
         verbose=False,
     ):
-
         self.alpha = alpha
         self.n_lambda = n_lambda
         self.min_lambda_ratio = min_lambda_ratio

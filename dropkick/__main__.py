@@ -70,7 +70,8 @@ def run(args):
             )
         )
     adata.write(
-        "{}/{}_dropkick.h5ad".format(args.output_dir, name), compression="gzip",
+        "{}/{}_dropkick.h5ad".format(args.output_dir, name),
+        compression="gzip",
     )
     if args.csv:
         if args.verbose:
@@ -79,7 +80,11 @@ def run(args):
                     args.output_dir, name
                 )
             )
-        adata.obs[["dropkick_score","dropkick_label"]].to_csv("{}/{}_dropkick_scores.csv".format(args.output_dir, name), index=True, header=True)
+        adata.obs[["dropkick_score", "dropkick_label"]].to_csv(
+            "{}/{}_dropkick_scores.csv".format(args.output_dir, name),
+            index=True,
+            header=True,
+        )
     # generate plot of dropkick coefficient values and CV scores vs tested lambda_path
     coef_plot(
         adata,
@@ -127,13 +132,17 @@ def qc(args):
 def main():
     parser = argparse.ArgumentParser(prog="dropkick")
     parser.add_argument(
-        "-V", "--version", action="version", version=get_versions()["version"],
+        "-V",
+        "--version",
+        action="version",
+        version=get_versions()["version"],
     )
 
     subparsers = parser.add_subparsers()
 
     run_parser = subparsers.add_parser(
-        "run", help="Automated filtering of scRNA-seq data.",
+        "run",
+        help="Automated filtering of scRNA-seq data.",
     )
     run_parser.add_argument(
         "counts",
@@ -242,7 +251,10 @@ def main():
     )
     run_parser.set_defaults(func=run)
 
-    qc_parser = subparsers.add_parser("qc", help="scRNA-seq quality control report.",)
+    qc_parser = subparsers.add_parser(
+        "qc",
+        help="scRNA-seq quality control report.",
+    )
     qc_parser.add_argument(
         "counts",
         type=str,

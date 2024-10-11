@@ -55,6 +55,17 @@ interactive walkthrough of the ``dropkick`` pipeline and its outputs.
 
 Full documentation is available at |KenLauLab.github.io/dropkick|_.
 
+Contributing to dropkick:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After making changes, lint, format and document code before committing:
+
+.. code:: bash
+
+   make format  # black-formatting
+   make lint  # lint Python code
+   make doc  # pdoc3 documentation
+
 .. |Dropkick Logo| image:: https://github.com/KenLauLab/dropkick/blob/master/data/dropkick_logo.png
 
 .. |Latest Version| image:: https://img.shields.io/pypi/v/dropkick
